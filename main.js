@@ -4,7 +4,7 @@ var a = 15;
 var b = -2;
 var c = 22;
 var d = 0;
-var e = 22;
+var e = 13;
 
 if (a>b && a>c && a>d && a>e) {
     console.log ("The largest number of all is " + a);
