@@ -18,10 +18,8 @@ if (a>b && a>c && a>d && a>e) {
         console.log ("The largest number of all is " + e);
     }
 
-// Task 2
+//Task 2
 
-
- 
 var a = 3;
 var b = -7;
 var c = 2;
@@ -62,6 +60,19 @@ if (a>0 && b>0 && c>0){
 console.log ("+"+a+" "+"+"+b+" "+c);
 }
 
+//Task 2, take 3
+
+var a = 3;
+var b = -7;
+var c = 2;
+var product = a*b*c;
+
+if (product>0) {
+    console.log("+");
+} else {
+    console.log("-");
+}
+
 //Task 3
 
 var language = "Serbian";
@@ -77,7 +88,28 @@ switch (language) {
         console.log("Buon giorno");
     default:
         console.log("Saluton mondo");
-}
+      }
+
+//Task 3, take 2
+
+var language = "Hello World";
+
+switch (language) {
+    
+    case "English":
+        console.log("Hello world");
+        break;
+    case "Serbian":
+        console.log("Zdravo svete");
+        break;
+    case "Italian":
+        console.log("Ciao mondo");
+        break;
+    case "Esperanto":
+        console.log("Saluton mondo");
+        break;
+     case "Hello World":
+        console.log("Hello World" + ", " + "Zdravo svete" + ", " + "Saluton mondo" + ", " + "Ciao mondo" + ", " + "Привет мир");
 
 //Task 4
 
