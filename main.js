@@ -1,30 +1,100 @@
-//Task No 1
+//Task 1
 
-var Peter = 3500;
-var Jim = 5000; 
+var a = 15;
+var b = -2;
+var c = 22;
+var d = 0;
+var e = 22;
 
-console.log (Peter > Jim);
+if (a>b && a>c && a>d && a>e) {
+    console.log ("The largest number of all is " + a);
+}else if ( b>a && b>c && b>d && b>e) {
+    console.log ("The largest number of all is " + b);
+}else if (c>a && c>b && c>d && c>e) {
+    console.log ("The largest number of all is " + c);
+} else if (d>a && d>b && d>c && d>e) {
+    console.log ("The largest number of all is " + d);
+}else {
+        console.log ("The largest number of all is " + e);
+    }
 
-//Task No 2
-
-var John = 38;
-var Mike = (John + 8)/2; //moglo je i sve u jednoj liniji (John + 8)/2-8; ali                               sam ga malo zakomplikovao cisto radi vezbe :)
-var nowMike = Mike - 8;
-
-Mike = nowMike;
-
-console.log (Mike);
-
-//Task No 3
-
-var firstFlock = 78;
-var secondFlock = 57;
-
-firstFlock -= 12;
-secondFlock += 12;
-
-var finalSecondFlock = secondFlock - 4;
-
-console.log (firstFlock >= finalSecondFlock);
+// Task 2
 
 
+ 
+var a = 3;
+var b = -7;
+var c = 2;
+
+if (a>0){
+    console.log ("+"+a);
+}else {
+    console.log (a);
+}
+
+if (b>0) {
+    console.log ("+"+b);
+}else {
+    console.log (b);
+}
+
+if (c>0) {
+    console.log ("+"+c);
+}else {
+    console.log (c);
+}
+
+//Task 2, take 2
+
+var a = 3;
+var b = -7;
+var c = 2;
+
+if (a>0 && b>0 && c>0){
+    console.log ("+"+a+" "+"+"+b+" "+"+"+c);
+}else if (a<0 && b<0 && c<0){
+    console.log (a+""+b+"  "+c);
+}else if (a<0 && b>0 && c>0) {
+    console.log (a+" "+"+"+b+" "+"+"+c)
+}else if (a>0 && b<0 && c>0){
+    console.log ("+"+a+", "+b+", "+"+"+c)
+}else if (a>0 && b>0 && c<0)
+console.log ("+"+a+" "+"+"+b+" "+c)
+
+
+//Task 3
+
+var language = "Serbian";
+
+switch (language) {
+    case "Serbian":
+        console.log("Zdravo svete");
+    case "English":
+        console.log("Hello world");
+    case "Spain":
+        console.log("Buenos dias");
+    case "Italian":
+        console.log("Buon giorno");
+    default:
+        console.log("Saluton mondo");
+}
+
+//Task 4
+
+var userAge = 36;
+
+userAge > 28 ? console.log("true") : console.log("false");
+
+var result = "true";
+
+if (!result) {
+    console.log ("User is less than 28 years old");
+} else {
+    console.log(true);
+}
+
+if (userAge>28) {
+    console.log ("User is older than 28 years old");
+}else {
+    console.log("User is 28 years old");
+}
