@@ -1,109 +1,80 @@
+
 //Task 1
 
-var dataOld = [34, true, "Peter", 1992];
-var dataNew = [];
+function reverseArray() {
 
-
-for (var i = 0 ; i < 4; i++) {
-   dataNew[i]=dataOld[i];
-}
-    console.log (dataNew);
+    var dataOld = [1,2,3,4,5,6];
+    var dataNew = [];
     
+    for (var i = dataOld.length-1; i>=0; i--){
+        dataNew[dataOld.length-1 - i] = dataOld[i];
+    }
+        console.log(dataNew);
+}
+reverseArray();
 
 //Task 2
 
-var dataOld = [34, true, "Peter", 1992];
-var dataNew = [];
+var anyParametar = function (a) {
 
-for (var i = dataOld.length-1; i>=0; i--){
-    dataNew[dataOld.length-1 - i] = dataOld[i];
-}
-console.log(dataNew);
+console.log(typeof a);
+} 
+
+anyParametar(true);
 
 //Task 3
 
-var dataOld = [34, true, "Peter", 1992];
-var dataNew = [12, "Jack"];
+function longestName () {
 
-for(var i=0; i < dataOld.length; i++){
-    dataNew [dataNew.length++]=dataOld[i];
-}
-console.log (dataNew);
+    var names = ["Mia", "Anna", "Mikel", "Allexandridoss", "Konstantinos"];
+    var parametarLength = 0;
+    var longest="";
+    
+    for (var i=0; i<names.length; i++){
 
-//Task 4 (Ovde problem može da pravi 
-//nova varijabla c koja uzima vrednost varijable a)
-
-var a = [12, 56, 32, 44, 69];
-var b = [88, 7, 13];
-var c = a;
-
-for(var i=0; i < b.length; i++){
-   a[a.length++]=b[i];
+        if (names[i].length > parametarLength){
+            parametarLength=names[i].length;
+            longest = names[i];
+        }
+  }
+console.log(longest);
 }
 
-console.log(c);
+longestName();
 
-//Task 5
+//Task 4
 
-var a = [12, 56, 32, 44];
-var b = [88, 7, 13]
-var c = [];
+function second () {
+var numbers = [1, 2, -3, 44, 532, 622, 7, -4, 921, -20, -13];
 
-for (var i = 0; i < a.length; i++) {
-	for (var j = 0; j < b.length; j++) {
-		c[2*i] = a[i];
-		c[2*j + 1] = b[j];
-	}
-}
+var largest = 0;
+var secondLargest = 0;
+var smallest = 0;
+var secondSmallest = 0;
 
-console.log(c);
-
-//Task 6 (Znam da se document.write() ne koristi, 
-//ipak, ostavio sam ga kako bih video rezultat na monitoru)
-
-
- for (var i=1; i<=6; i++){
-     for (var j=1; j<=i; j++){
-        document.write("*");
+for (var i=0; i<numbers.length; i++){
+    if (numbers[i] > largest){
+        secondLargest = largest;
+        largest=numbers[i];
     }
-    document.write("<br/>");
- }
+    else if (numbers[i] > secondLargest){
+        secondLargest = numbers[i];
+    }
+}
 
- //Task 7 (Nisam zadovoljan ovim, nikako nisam uspevao 
- //da napravim resenje koje mi daje jasne razmake izmedju
- //bocnih strana kvadrata, kasnije sam video kako bih mogao
- //ali nisam napisao jer nije moje originalno resenje)
- var n =" ";
- for (var i=1; i<=6; i++){
-     for (var j=1; j<=10; j++){
-         if (i>1 && i<6 && j>1 && j<10 ) {
- 
-         document.write(n*j);
-     }
-     else  {
-         document.write("*");
-     }
- }
- document.write("<br/>");
- }
+for (var i=0; i<numbers.length; i++) {
+    if (numbers[i]<smallest){
+        secondSmallest = smallest;
+        smallest=numbers[i];
+    }
+    else if (numbers[i] < secondSmallest){
+        secondSmallest = numbers[i];
+    }
+}
+console.log(secondLargest, secondSmallest);
+}
 
-
-
-
-
-
-
-
-
-   
-
-
-
-
-
-
-
-
+second();
 
 
 
