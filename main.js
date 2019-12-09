@@ -76,6 +76,26 @@ console.log(secondLargest, secondSmallest);
 
 second();
 
+//Task 5
+
+function numbers (arr, number) {
+   
+    getBigger(arr, number);
+}
+numbers([45, 33, 75, 2, 9, 1, -2, 05, 87, 234, 333, 89], 4)
+
+
+function getBigger (list, singleNumber) {
+   
+    var result = [];
+    for (var i=0; i< list.length; i++){
+        if(list[i] > singleNumber){
+            result[i]=list[i];
+        }
+    }
+    console.log(result);
+}
+
 
 
 
