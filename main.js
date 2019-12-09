@@ -82,7 +82,7 @@ function numbers (arr, number) {
    
     getBigger(arr, number);
 }
-numbers([45, 33, 75, 2, 9, 1, -2, 05, 87, 234, 333, 89], 4)
+numbers([45, 33, 75, 2, 9, 1, -2, -5, 87, 234, 333, 89], 4)
 
 
 function getBigger (list, singleNumber) {
