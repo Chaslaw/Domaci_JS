@@ -1,82 +1,108 @@
 
-//Task 1
-
-function reverseArray() {
-
-    var dataOld = [1,2,3,4,5,6];
-    var dataNew = [];
     
-    for (var i = dataOld.length-1; i>=0; i--){
-        dataNew[dataOld.length-1 - i] = dataOld[i];
-    }
-        console.log(dataNew);
-}
-reverseArray();
+    //Task 6 (Odabrao sam dva razlicita niza, iako je 
+    //mogao da bude i isti za obe)
 
-//Task 2
-
-var anyParametar = function (a) {
-
-console.log(typeof a);
-} 
-
-anyParametar(true);
-
-//Task 3
-
-function longestName () {
-
-    var names = ["Mia", "Anna", "Mikel", "Allexandridoss", "Konstantinos"];
-    var parametarLength = 0;
-    var longest="";
-    
-    for (var i=0; i<names.length; i++){
-
-        if (names[i].length > parametarLength){
-            parametarLength=names[i].length;
-            longest = names[i];
+    var lowestNumber = function (arrFirst){
+        var lowest = 0;
+        for (var i = 0; i<arrFirst.length; i++){
+               if (arrFirst[i]<lowest){
+                   lowest = arrFirst[i];
+               }
+            }
+           return lowest;
+       } 
+       
+      var highestNumber = function (arrSecond){
+        var highest = 0;
+        for (var i = 0; i<arrSecond.length; i++){
+               if (arrSecond[i]>highest){
+                   highest = arrSecond[i];
+               }
+            }
+           return highest;
+       } 
+  
+        var multyple = function (first, second ) {
+           var a = lowestNumber(first);
+           var b = highestNumber(second);
+           var result = a*b;
+          
+           console.log(result);
         }
-  }
-console.log(longest);
-}
 
-longestName();
+        multyple([-2,-19,-20,5,-21,99,33,778,23,78,29], [-23,-18,-22,5,-21,96,32,123,77,24,76,20]);
 
-//Task 4
 
-function second () {
-var numbers = [1, 2, -3, 44, 532, 622, 7, -4, 921, -20, -13];
+        //Task 7
+         
+           /* Petlju za pretragu jedinstvenih brojeva prvo sam uradio ovako,
+            videvsi kako se radi na netu, dakle nije moja originalna ideja. Kako to nije davalo zeljeni rezultat, presao sam na drugu petlju koja sledi. Ovo sam ostavio jer je korisno, i mozda zatreba kasnije.
 
-var largest = 0;
-var secondLargest = 0;
-var smallest = 0;
-var secondSmallest = 0;
+            var unique = [];
+            var b = false; 
+            
+            for (var i=0; i<=arr.length; i++){
+                for (var j=0; j<=arr.length; j++){
+                    if (arr[i]==unique[j]){
+                        b=true;
+                    }
+                }
+               if (b==false) {
+                    unique[i]=arr[i];
+            }
+                b=false;
+        }
+         console.log(unique);
+       }
 
-for (var i=0; i<numbers.length; i++){
-    if (numbers[i] > largest){
-        secondLargest = largest;
-        largest=numbers[i];
+       */
+    
+
+
+  var deleteBiggest = function (arr){
+        
+
+    var order = [];
+    var unique = [];
+    
+    var position = 0;
+    var max = arr[0];
+    var min = arr[0];
+    var a = false;
+
+    for (var e = 0; e<arr.length; e++){
+        if(max<arr[e]){
+            max=arr[e];
+        }
     }
-    else if (numbers[i] > secondLargest){
-        secondLargest = numbers[i];
+
+    for (var i=0; i<arr.length; i++){
+        
+        for (var j=0; j<arr.length; j++){
+            if(arr[j]!=false){
+                if(min>arr[j]){
+                    min=arr[j];
+                    position=j;
+                }
+
+            }
+          
+        }
+        order[i] = min; 
+        arr[position]=false;
+        min=max;
     }
-}
-
-for (var i=0; i<numbers.length; i++) {
-    if (numbers[i]<smallest){
-        secondSmallest = smallest;
-        smallest=numbers[i];
+       //Petlja za izbacivanje originala i duplikata
+    for (var i=0; i<order.length; i++){
+        if (order[i]!=order[i-1] && order[i]!=order[i+1]){
+            unique[i]=order[i];
+        }
     }
-    else if (numbers[i] < secondSmallest){
-        secondSmallest = numbers[i];
+
+  
+  console.log(unique);
+            
     }
-}
-console.log(secondLargest, secondSmallest);
-}
-
-second();
-
-
-
-
-
+ 
+    deleteBiggest([15, 35, 46, 23, 15, 17, 23, 24, 35, 12, 72, 64, 35, 22, 64]);
