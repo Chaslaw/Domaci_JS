@@ -1,7 +1,13 @@
+// TASK 6:
+// Create three functions. 
+// First one should receive an array and return the lowest number in the array.
+// Second one should receive an array and return the highest number if an array.
+// Third function should receive first two functions, 
+// and should multiply the result of the first function with the result of the second function. 
+// Then it should console log the result.
 
-    
-    //Task 6 (Odabrao sam dva razlicita niza, iako je 
-    //mogao da bude i isti za obe)
+// (Odabrao sam dva razlicita niza, iako je 
+//mogao da bude i isti za obe)
 
     var lowestNumber = function (arrFirst){
         var lowest = 0;
@@ -33,11 +39,19 @@
 
         multyple([-2,-19,-20,5,-21,99,33,778,23,78,29], [-23,-18,-22,5,-21,96,32,123,77,24,76,20]);
 
-
-        //Task 7
+// TASK 7:
+// Create a function that should receive an array and the second function.
+// Array should be:
+// [15, 35, 46, 23, 15, 17, 23, 24, 35, 12, 72, 64, 35, 22, 64]
+// After array is received you should find all numbers from array which are unique, and create a new array out of them.
+// Then, the second function that is passed in the first one should be called, 
+// and it should receive this new array we created. It should then delete the biggest number in the array, 
+// and console log the result (array).
          
-           /* Petlju za pretragu jedinstvenih brojeva prvo sam uradio ovako,
-            videvsi kako se radi na netu, dakle nije moja originalna ideja. Kako to nije davalo zeljeni rezultat, presao sam na drugu petlju koja sledi. Ovo sam ostavio jer je korisno, i mozda zatreba kasnije.
+/* Petlju za pretragu jedinstvenih brojeva prvo sam uradio ovako,
+   videvsi kako se radi na netu, dakle nije moja originalna ideja. 
+   Kako to nije davalo zeljeni rezultat, presao sam na drugu petlju koja sledi. 
+   Ovo sam ostavio jer je korisno, i mozda zatreba kasnije.*/
 
             var unique = [];
             var b = false; 
@@ -56,11 +70,9 @@
          console.log(unique);
        }
 
-       */
+// Potom sam poredjao niz od najmanjeg ka najvecem, i posle je vec bilo lakse.
     
-
-
-  var deleteBiggest = function (arr){
+var deleteBiggest = function (arr){
         
 
     var order = [];
