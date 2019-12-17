@@ -35,7 +35,9 @@
         //Task 7
          
            /* Petlju za pretragu jedinstvenih brojeva prvo sam uradio ovako,
-            videvsi kako se radi na netu, dakle nije moja originalna ideja. Kako to nije davalo zeljeni rezultat (izbacivao je samo duplikate a ostavljao originale), presao sam na drugu petlju koja sledi dole. Ovo sam ostavio jer je korisno, i mozda mi zatreba nekad kasnije.
+            videvsi kako se radi na netu, dakle nije moja originalna ideja. 
+            Kako to nije davalo zeljeni rezultat (izbacivao je samo duplikate a ostavljao originale), 
+            presao sam na drugu petlju koja sledi dole. Ovo sam ostavio jer je korisno, i mozda mi zatreba nekad kasnije.
 
             var unique = [];
             var b = false; 
