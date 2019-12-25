@@ -33,13 +33,15 @@ person.callMe();
 
 
 var person = {
-    newData: function (){
-        this.name="Mike";
-        this.age=36;
-        this.married=false;
+    newData: function (name, age, married) {
+        this.name= name;
+        this.age= age;
+        this.married= married;
     }
+    
 }
-person.newData();
+person.newData("Mike", 34, "married");
+console.log(person);
 
 
 
