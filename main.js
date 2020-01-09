@@ -1,95 +1,243 @@
-// TASK 1:
+// TASK 1
+// Based on given string:
+// "Lorem ipsum dolor sit amet"
+// Create a function that should receive string, and transform all letters to lowercase.
 
-// Create a constructor function for generating student objects. Each student object should have name, last name, age and average grade.
+// var lorem = "Lorem ipsum dolor sit amet";
 
-function Student (name, lastName, age, averageGrade){
-    this.name = name;
-    this.lastName = lastName;
-    this.age = age;
-    this.averageGrade = averageGrade;
+function transform(word){
+    console.log(word.toLowerCase());
 }
+transform("Lorem ipsum dolor sit amet");
 
-var jack = new Student ("Jack", "Sparrow", 23, 7.8);
+// TASK 2
+// Based on given string:
+// "Lorem ipsum dolor sit amet"
+// Create a function that should check if there is a word "sit" in the string, and console log sentence saying that it exist or not.
 
-console.log(jack);
+var someLorem = "Lorem ipsum dolor sit amet";
 
-// TASK 2:
+var theWord = "sit";
 
-// Create a constructor function for generating objects with data about players of your favorite football team (name, age, goals scored, yellow cards). You can find statistics online.
-
-function Arsenal (name, age, goals_scored, yellow_cards){
-    this.name = name;
-    this.age = age;
-    this.goals_scored = goals_scored;
-    this.yellow_cards = yellow_cards;
-}
-
-var ozil = new Arsenal ("Mesut Ozil", 31, 12, 0);
-var leno = new Arsenal ("Bernd Leno", 27, 0, 1);
-var luiz = new Arsenal ("David Luiz", 32, 20, 2 );
-
-console.log(ozil, leno, luiz);
-
-
-// TASK 3:
-
-// Try to do the same thing as in the previous task, but when creating player objects try to do it dinammicaly (using loop). For that you'll need data in following format:
-
-// var players = [["Player name", 27, 12, 4], ["Player name", 27, 12, 4], ["Player name", 27, 12, 4]];
-
-// This array is just example, change data in this array with data of players you choose.
-
-
-function Arsenall (player) {
-    this.name = player[0];
-    this.age = player[1];
-    this.goals_scored = player[2];
-    this.yellow_cards = player[3];
-}
-
-var players = [ ["Ozil", 31, 12, 0], ["Leno", 27, 0, 1], ["Luiz", 32, 20, 2]]
-
-for (var i = 0; i<players.length; i++){
-    this[players[i][0].toLowerCase()] = new Arsenall (players[i]);
-}
-
-console.log(ozil, leno, luiz);
-
-// TASK 4:
-
-// Create a construction function that should contain properties for first number, second number, and method. Then create a four instances of object from that constructor, each with different numbers, and different method. First should have method for multiplying of its own numbers, second for dividing, third for adding and fourth for subtracting.
-
-function Operations (first, second, met) {
-    this.first=first;
-    this.second=second;
-    switch(met){
-case "multy": this.mathOp = function () {
-return this.first*this.second;
+function isThereAword(){
+    if(someLorem.indexOf(theWord)>-1){
+        console.log("Yes, we got the word " + theWord);
     }
-    break;
-    case "dividing": this.mathOp = function () {
-        return this.first/this.second;
-            }
-            break;
-            case "adding": this.mathOp = function () {
-                return this.first+this.second;
-                    }
-                    break;
-                    case "substracting": this.mathOp = function () {
-                        return this.first-this.second;
-                            }
-                            break;
-                        };
-                    };
+}
+isThereAword();
 
-    var multy = new Operations (2,3,"multy");
-    var dividing = new Operations (2,3,"dividing");
-    var adding = new Operations (2,3, "adding");
-    var substracting = new Operations (2,3, "substracting");
-    console.log(multy.mathOp());
-    console.log(dividing.mathOp().toFixed(2));//ovde sam iskoristio method da probam, jer je rezultat bio 0.6666, pa sam ga sveo na dve decimale, medjutim pretvorio ga je u string
-    console.log(adding.mathOp());
-    console.log(substracting.mathOp());
+//Take 2
+
+var theOtherWord = "amet";
+
+function isThereAnotherWord(){
+    if(someLorem.includes(theOtherWord)==true){
+        console.log("Yes, we got the word " + theOtherWord)
+    }else{
+        console.log("No, wo got no word " + theOtherWord);
+    }
+}
+isThereAnotherWord();
+
+// TASK 3
+// Based on given string:
+// "Lorem ipsum dolor sit amet"
+// Create a function that should find and return index of the last letter in the sentence.
+
+var someLorem = "Lorem ipsum dolor sit amet";
+
+function findLast(sentence){
+ var arr = sentence.length-1;
+console.log(arr);
+};
+
+findLast(someLorem);
+
+
+// TASK 4
+// Based on given string:
+// "Lorem ipsum dolor sit amet"
+// Create a function that should split string based on empty space, and return first 3 results.
+
+var firstThree = "Lorem ipsum dolor sit amet";
+
+function getThree(){
+    var firstStep = firstThree.split(" ");
+    var secondStep = firstStep.slice(0,3);
+
+    console.log(secondStep);
+}
+
+getThree();
+
+// TASK 5
+// Based on given string:
+// "Piter is an actor."
+// Create a function that should turn a string into the following string:
+// "Pitor is an acter."
+
+// Verovtno je postojao jednostavniji nacin
+// al ja uradih ovako
+
+var sentence = "Piter is an actor.";
+
+function turn (){
+    
+    var arr = sentence.split("");
+    
+    var e = arr.indexOf("e");
+    var o = arr.indexOf("o");
+    var ind = sentence.charAt(3);
+
+    arr[e]=arr[o];
+    arr[o]= ind;
+
+    var str = arr.toString();
+    var final =str.replace(/,/g, "");
+
+  console.log(final);
+
+}
+console.log(sentence);
+turn();
+
+// TASK 6
+// Based on given array:
+// var someData = [34, 23, 14, 56, 23, 44, 65];
+// Create a function that should remove number 56 from an array and return array without it.
+
+var someData = [34, 23, 14, 56, 23, 44, 65];
+
+function without(){
+
+var bigger = someData.filter(function(element){
+    return element<56;
+});
+
+var smaller = someData.filter(function(element){
+    return element>56;
+});
+
+var result = bigger.concat(smaller);
+
+console.log(result);
+
+};
+
+without();
+
+// TASK 7
+// Based on given array:
+// var someData = [34, 23, 14, 56, 23, 44, 65];
+// Create a function that should turn it into following array:
+// var otherData = [23, 14, 56, 65, 44, 23];
+
+var someData = [34, 23, 14, 56, 23, 44, 65];
+
+function cut (){
+
+    var otherWay = [...someData].reverse();
+
+    var result = someData.filter(function(element){
+    return element = someData.splice(4,3);
+});
+
+    var newResult = otherWay.filter(function(element){
+    return element = otherWay.splice(3,3);
+});
+    
+var otherData = result.concat(newResult);
+
+    otherData.shift();
+
+    console.log(otherData);
+};
+
+cut();
+
+// TASK 8
+// Based on given array:
+// var someData = [334, 233, 212, 199, 154, 122];
+// Create a function that should repack array to the new one, where each element should be current one, reduced by value of previous one from initial array.
+
+var someData = [334, 233, 212, 199, 154, 122];
+
+function reduced(){
+
+var result = someData.map(function(element){
+    return element - someData[someData.indexOf(element)-1];
+});
+ console.log(result);
+};
+
+reduced();
+
+// TASK 9
+// Based on given array:
+// Create a function that should return new array with all students whose average grade is larger than 8.5. In new array, average grade should be formatted to 2 decimals.
+
+var students = [
+  {
+     name: "Jim",
+     avgGrade: 8.5556
+  },
+  {
+     name: "Mike",
+     avgGrade: 8.5492
+  },
+  {
+     name: "Anna",
+     avgGrade: 8.9322 
+  },
+  {
+     name: "Jack",
+     avgGrade: 8.6111
+  }
+];
+
+var avg = 8.6;
+
+function goodStudents () {
+
+    var onlyTheBest = students.filter(function(item){
+            return item.avgGrade>=avg;
+  });
+
+    onlyTheBest.forEach(function(item){
+        item.avgGrade = item.avgGrade.toFixed(2);
+  })
+  console.log(onlyTheBest);
+};
+
+goodStudents();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
    
