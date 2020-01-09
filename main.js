@@ -67,16 +67,19 @@ case "multy": this.mathOp = function () {
 return this.first*this.second;
     }
     break;
-    case "dividing": this.mathOp = function () {
-        return this.first/this.second;
+    case "dividing": 
+            this.mathOp = function () {
+                return this.first/this.second;
             }
             break;
-            case "adding": this.mathOp = function () {
-                return this.first+this.second;
+            case "adding": 
+                this.mathOp = function () {
+                    return this.first+this.second;
                     }
                     break;
-                    case "substracting": this.mathOp = function () {
-                        return this.first-this.second;
+                    case "substracting": 
+                        this.mathOp = function () {
+                            return this.first-this.second;
                             }
                             break;
                         };
