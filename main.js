@@ -47,6 +47,8 @@
 // TASK 5
 // Create a function that should return a random number (round number) between 0 and 10, every time you run it.
 
+//ovde moze nekoliko resenja, moglo je i ceil umesto round, tad ne bi vratilo 0 kao resenje
+
 // function random (){
 //     console.log(Math.round(Math.random()*10));
 // };
