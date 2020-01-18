@@ -48,7 +48,7 @@
 // Create a function that should return a random number (round number) between 0 and 10, every time you run it.
 
 // function random (){
-//     console.log(Math.round(Math.random()*11));
+//     console.log(Math.round(Math.random()*10));
 // };
 // random();
 
@@ -138,42 +138,4 @@ for (var i = 0; i<friends.length; i++){
 };
 
 getNameOut();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
 
