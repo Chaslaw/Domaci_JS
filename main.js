@@ -1,215 +1,149 @@
 // TASK 1
-// Based on given string:
-// "Lorem ipsum dolor sit amet"
-// Create a function that should receive string, and transform all letters to lowercase.
+// Create a function that will ALERT if browser is online or not.
 
-// var lorem = "Lorem ipsum dolor sit amet";
+// function online (){
+//     if(window.navigator.onLine == true){
+// alert("This browser is online");
+//     }
+//     else{
+//         alert("This browser is offline");
+//     }
+// };
 
-function transform(word){
-    console.log(word.toLowerCase());
-}
-transform("Lorem ipsum dolor sit amet");
+// online();
 
 // TASK 2
-// Based on given string:
-// "Lorem ipsum dolor sit amet"
-// Create a function that should check if there is a word "sit" in the string, and console log sentence saying that it exist or not.
+// Create a function that should, when run, reload the page.
 
-var someLorem = "Lorem ipsum dolor sit amet";
-
-var theWord = "sit";
-
-function isThereAword(){
-    if(someLorem.indexOf(theWord)>-1){
-        console.log("Yes, we got the word " + theWord);
-    }
-}
-isThereAword();
-
-//Take 2
-
-var theOtherWord = "amet";
-
-function isThereAnotherWord(){
-    if(someLorem.includes(theOtherWord)==true){
-        console.log("Yes, we got the word " + theOtherWord)
-    }else{
-        console.log("No, wo got no word " + theOtherWord);
-    }
-}
-isThereAnotherWord();
+// function reload () {
+//     window.location.reload();
+// }
+// reload();
 
 // TASK 3
-// Based on given string:
-// "Lorem ipsum dolor sit amet"
-// Create a function that should find and return index of the last letter in the sentence.
+// Create a function that should, 3 seconds after page is loaded, redirect you to google.com, ad then, 3 seconds after that take you back to your page. (Comment out your code once you're done so you can continue with the other tasks, as this will cause infinite loop).
 
-var someLorem = "Lorem ipsum dolor sit amet";
+// function goAndBack(){
+//     window.location.href = "http://www.google.com";
+// }
 
-function findLast(sentence){
- var arr = sentence.length-1;
-console.log(arr);
-};
-
-findLast(someLorem);
-
+// setTimeout(goAndBack, 3000);
 
 // TASK 4
-// Based on given string:
-// "Lorem ipsum dolor sit amet"
-// Create a function that should split string based on empty space, and return first 3 results.
+// Crete a function that should every second console log a number incremented by one. When number reach 15 it should stop running.
 
-var firstThree = "Lorem ipsum dolor sit amet";
+// var number = 1;
 
-function getThree(){
-    var firstStep = firstThree.split(" ");
-    var secondStep = firstStep.slice(0,3);
+// function everySecond(){
+// console.log(number);
+// number++;
+// if (number>15){
+//     clearInterval(interval);
+// }
+// };
 
-    console.log(secondStep);
-}
-
-getThree();
+// var interval = setInterval(everySecond, 1000);
 
 // TASK 5
-// Based on given string:
-// "Piter is an actor."
-// Create a function that should turn a string into the following string:
-// "Pitor is an acter."
+// Create a function that should return a random number (round number) between 0 and 10, every time you run it.
 
-// Verovtno je postojao jednostavniji nacin
-// al ja uradih ovako
-
-var sentence = "Piter is an actor.";
-
-function turn (){
-    
-    var arr = sentence.split("");
-    
-    var e = arr.indexOf("e");
-    var o = arr.indexOf("o");
-    var ind = sentence.charAt(3);
-
-    arr[e]=arr[o];
-    arr[o]= ind;
-
-    var str = arr.toString();
-    var final =str.replace(/,/g, "");
-
-  console.log(final);
-
-}
-console.log(sentence);
-turn();
+// function random (){
+//     console.log(Math.round(Math.random()*11));
+// };
+// random();
 
 // TASK 6
-// Based on given array:
-// var someData = [34, 23, 14, 56, 23, 44, 65];
-// Create a function that should remove number 56 from an array and return array without it.
 
-var someData = [34, 23, 14, 56, 23, 44, 65];
+// 	STEP 1
+// 	    Create an array of objects, containing at least 5 users. Each of them should have name, age and status. Status should be "inactive" for each of them.
 
-function without(){
+// 	STEP 2
+// 	    Once page is loaded it should display a popup where user can enter his name. Once it's done name user entered should be compared against existing users.
 
-var bigger = someData.filter(function(element){
-    return element<56;
-});
+// 	    If it doesn't match any user you should console log message: 
 
-var smaller = someData.filter(function(element){
-    return element>56;
-});
+// 	        "User with name " + name + " doesn't exist."
 
-var result = bigger.concat(smaller);
+// 	    If it match some of users, object with that user's data should be copied from array. It's status should be changed to "active", and it should be saved in local storage using "loggedInUser" as a key.
 
-console.log(result);
+// 	STEP 3
+// 	    After one minute user's data should be removed from local storage.
 
-};
+// 	    You should console log a message that user is logged out.
 
-without();
 
-// TASK 7
-// Based on given array:
-// var someData = [34, 23, 14, 56, 23, 44, 65];
-// Create a function that should turn it into following array:
-// var otherData = [23, 14, 56, 65, 44, 23];
-
-var someData = [34, 23, 14, 56, 23, 44, 65];
-
-function cut (){
-
-    var otherWay = [...someData].reverse();
-
-    var result = someData.filter(function(element){
-    return element = someData.splice(4,3);
-});
-
-    var newResult = otherWay.filter(function(element){
-    return element = otherWay.splice(3,3);
-});
-    
-var otherData = result.concat(newResult);
-
-    otherData.shift();
-
-    console.log(otherData);
-};
-
-cut();
-
-// TASK 8
-// Based on given array:
-// var someData = [334, 233, 212, 199, 154, 122];
-// Create a function that should repack array to the new one, where each element should be current one, reduced by value of previous one from initial array.
-
-var someData = [334, 233, 212, 199, 154, 122];
-
-function reduced(){
-
-var result = someData.map(function(element){
-    return element - someData[someData.indexOf(element)-1];
-});
- console.log(result);
-};
-
-reduced();
-
-// TASK 9
-// Based on given array:
-// Create a function that should return new array with all students whose average grade is larger than 8.5. In new array, average grade should be formatted to 2 decimals.
-
-var students = [
-  {
-     name: "Jim",
-     avgGrade: 8.5556
-  },
-  {
-     name: "Mike",
-     avgGrade: 8.5492
-  },
-  {
-     name: "Anna",
-     avgGrade: 8.9322 
-  },
-  {
-     name: "Jack",
-     avgGrade: 8.6111
-  }
+var friends = [
+    {
+        name: "Peter",
+        age:35,
+        status: "inactive"
+    },
+    {
+        name: "John",
+        age:36,
+        status: "inactive"
+    },
+    {
+        name: "Alex",
+        age:32,
+        status: "inactive"
+    },
+    {
+        name: "Erasmo",
+        age:31,
+        status: "inactive"
+    },
+    {
+        name: "Hugo",
+        age:30,
+        status: "inactive"
+    }
 ];
 
-var avg = 8.6;
+// nisam bas zadovoljan ovo kako sam uradio
+// tacnije, nisam siguran ni da li sam dobro razumeo zadatak
+// Ovo radi nekako, znaci brise ime ga iz lokala i menja status
+// medjutim, daleko da je dobro sve
+// Trebalo je eventualno da iskoristim neki method za loop umesto for loopa
 
-function goodStudents () {
 
-    var onlyTheBest = students.filter(function(item){
-            return item.avgGrade>=avg;
-  });
+var visitor =  prompt("Please, enter your name:");
+var presentUser;
 
-    onlyTheBest.forEach(function(item){
-        item.avgGrade = item.avgGrade.toFixed(2);
-  })
-  console.log(onlyTheBest);
+function getNameOut () {
+for (var i = 0; i<friends.length; i++){
+   
+    if (visitor === friends[i].name){
+        presentUser = friends[i];
+        presentUser.status = "active";
+        localStorage.setItem ("loggedInUser", presentUser.name);
+        console.log("Welcome " + visitor + " !");
+        alert("Welcome " + visitor + " ! You will officialy be logged out after 30 seconds.")
+        
+            setTimeout(function(){
+
+                localStorage.removeItem("loggedInUser");
+                presentUser.status = "inactive";
+            
+                    alert(visitor + " ,you are officialy logged out now.");
+        
+                }, 30000);
+        
+    }
+    
+    else if(visitor != presentUser ){
+            console.log("User with name " + visitor + " doesn't exist.")
+   }
+  }
 };
 
-goodStudents();
+getNameOut();
+
+
+
+
+
+
 
 
 
